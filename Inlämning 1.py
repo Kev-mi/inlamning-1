@@ -1,7 +1,15 @@
 import random
 
-def Number_guessing_game(Correct_Number):
-    '''Function that asks the user to guess the correct random number'''
+def Number_guessing_game(Correct_Number: int) -> int:
+    '''Function that asks the user to guess the correct random number
+    
+    Args:
+        Correct_Number (int): the randomly generated number that the user is asked to guess
+    
+    Returns:
+        Number_Of_guesses: integer that points to number of guesses
+    
+    '''
 
     Number_Of_Guesses = 1
     while Correct_Number == False:
@@ -20,15 +28,32 @@ def Number_guessing_game(Correct_Number):
         except:
             print("That was not a number!")
 
-def Score_Appender(Score):
-    '''Function that takes the amount of guesses as result and adds to a .txt file'''
+def Score_Appender(Score: int) -> int:
+    '''Function that takes the amount of guesses as result and adds to a .txt file
+    
+    Args:
+        Score (int): the number of guesses it took the user to answer correctly
+    
+    Returns:
+        None
+        
+    '''
 
     Highscore = open("Highscore_Guesses.txt", "a")
     Highscore.write(" %s" % str(Score))
     Highscore.close()
+    Return None
 
-def Number_Guessing_Loop(Want_To_Play):
+def Number_Guessing_Loop(Want_To_Play: int) -> int:
     '''Function that asks if the user wants to continue to play.'''
+    
+    Args:
+        Want_To_Play (int): int that determines if user wants to play
+            
+    Returns:
+        None:
+            
+     '''
 
     while Want_To_Play == 1:
         Number_Of_Guesses = Number_guessing_game(False)
@@ -40,6 +65,13 @@ def Number_Guessing_Loop(Want_To_Play):
 
 def Highscores():
     '''The function if the user wants to see highscores of guesses.
+    
+    Args:
+        None
+        
+    Returns:
+        None
+        
     '''
 
     Want_To_See = int(input("Type 1 if you want to see highscores"))
