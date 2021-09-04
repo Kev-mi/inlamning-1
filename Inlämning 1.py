@@ -42,7 +42,7 @@ def Score_Appender(Score: int) -> int:
     Highscore = open("Highscore_Guesses.txt", "a")
     Highscore.write(" %s" % str(Score))
     Highscore.close()
-    Return None
+    return None
 
 def Number_Guessing_Loop(Want_To_Play: int) -> int:
     '''Function that asks if the user wants to continue to play.'''
