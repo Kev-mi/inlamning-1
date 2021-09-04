@@ -45,7 +45,7 @@ def Score_Appender(Score: int) -> int:
     return None
 
 def Number_Guessing_Loop(Want_To_Play: int) -> int:
-    '''Function that asks if the user wants to continue to play.'''
+    '''Function that asks if the user wants to continue to play.
     
     Args:
         Want_To_Play (int): int that determines if user wants to play
