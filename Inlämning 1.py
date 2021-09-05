@@ -25,7 +25,7 @@ def Number_guessing_game(Correct_Number: int) -> int:
                     print("The number is too large")
                 else:
                     print("The number is too small")
-        except:
+        except ValueError:
             print("That was not a number!")
 
 def Score_Appender(Score: int) -> None:
