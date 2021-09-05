@@ -44,7 +44,7 @@ def Score_Appender(Score: int) -> None:
     Highscore.close()
     return None
 
-def Number_Guessing_Loop(Want_To_Play: int) -> int:
+def Number_Guessing_Loop(Want_To_Play: int) -> None:
     '''Function that asks if the user wants to continue to play.
     
     Args:
