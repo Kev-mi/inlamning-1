@@ -28,7 +28,7 @@ def Number_guessing_game(Correct_Number: int) -> int:
         except:
             print("That was not a number!")
 
-def Score_Appender(Score: int) -> int:
+def Score_Appender(Score: int) -> None:
     '''Function that takes the amount of guesses as result and adds to a .txt file
     
     Args:
