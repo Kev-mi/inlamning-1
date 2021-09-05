@@ -74,7 +74,7 @@ def Highscores():
         
     '''
 
-    Want_To_See = int(input("Type 1 if you want to see highscores"))
+    Want_To_See = int(input("Type 1 if you want to see highscores, otherwise the program will terminate"))
     if Want_To_See == 1:
         File = open("Highscore_Guesses.txt", "r")
         Guesses_Highscores = File.read()
