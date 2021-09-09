@@ -1,11 +1,21 @@
 import random
 
+def yes_or_no(question):
+    print(question)
+    while True:
+        user_wish = input()
+        if user_wish == "yes":
+            return user_wish
+        elif user_wish == "no":
+            return user_wish
+        else:
+            print("That was not a yes or no!")
 
-def number_guessing_game(correct_number: int) -> int:
+def number_guessing_game() -> int:
     '''Function that asks the user to guess the correct random number
 
     Args:
-        correct_number(int): the randomly generated number that the user is asked to guess
+        None
 
     Returns:
         number_of_guesses: integer that points to number of guesses
@@ -13,6 +23,7 @@ def number_guessing_game(correct_number: int) -> int:
     '''
 
     number_of_guesses = 1
+    correct_number = False
     random_number = random.randint(1, 10)
     while correct_number == False:
         try:
@@ -48,24 +59,24 @@ def score_appender(score: int) -> None:
     return None
 
 
-def number_guessing_loop(want_to_play: int) -> None:
+def number_guessing_loop(user_name) -> None:
     '''Function that asks if the user wants to continue to play.
 
     Args:
-        Want_To_Play (int): int that determines if user wants to play
+        None:
 
     Returns:
         None:
 
      '''
 
-    want_to_play = 1
+    want_to_play = "yes"
 
-    while want_to_play == 1:
-        number_of_guesses = number_guessing_game(False)
+    while want_to_play == "yes":
+        number_of_guesses = number_guessing_game()
         score_appender(number_of_guesses)
-        want_to_play = int(input("Type 1 if you want to play again or 0 if you want to quit"))
-        if want_to_play == 0:
+        want_to_play = yes_or_no("Type yes if you want to play again or no if you want to quit")
+        if want_to_play == "no":
             return None
     return None
 
@@ -81,8 +92,8 @@ def highscores():
 
     '''
 
-    want_to_see = int(input("Type 1 if you want to see highscores, otherwise the program will terminate"))
-    if want_to_see == 1:
+    want_to_see = yes_or_no("Type yes if you want to see highscores, or no and the program will terminate")
+    if want_to_see == "yes":
         file = open("Highscore_Guesses.txt", "r")
         guesses_highscores = file.read()
         guesses_highscores = guesses_highscores.split()
@@ -99,6 +110,6 @@ def highscores():
 user_name = input("What is your name?")
 print("Hello " + user_name)
 
-number_guessing_loop()
+number_guessing_loop(user_name)
 
 highscores()
