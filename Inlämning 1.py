@@ -12,6 +12,7 @@ def Number_guessing_game(Correct_Number: int) -> int:
     '''
 
     Number_Of_Guesses = 1
+    Random_Number = random.randint(1, 10)
     while Correct_Number == False:
         try:
             Guessed_Number = int(input("Guess a random number between 1 and 10"))
@@ -91,7 +92,6 @@ def Highscores():
 User_Name = input("What is your name?")
 print("Hello " + User_Name)
 
-Random_Number = random.randint(1,10)
 Number_Guessing_Loop(1)
 
 Highscores()
