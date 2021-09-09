@@ -18,3 +18,9 @@ url = 'https://github.com/NordAxon/ec-python-course/blob/master/assignments/01_i
 df = pd.read_csv(url)
 
 vaccinated_per_day_mean = df.groupby(['country'])[['daily_vaccinations']].mean()
+
+parser.add_argument('--country1', help="enter first country", required=True, type=str)
+parser.add_argument('--country2', help="enter second country", required=True, type=str)
+parser.add_argument('--data-flag', help="enter what you want the program to do", required=True, type=str)
+
+
