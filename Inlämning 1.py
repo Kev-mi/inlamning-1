@@ -1,6 +1,6 @@
 import random
 
-def yes_or_no(question):
+def yes_or_no(question: str) -> str:
     '''Function that asks the user to answer yes or no and prints out if the user doesn't enter in yes or no.
 
         Args:
@@ -51,11 +51,12 @@ def number_guessing_game() -> int:
             print("That was not a number!")
 
 
-def score_appender(score: int) -> None:
-    '''Function that takes the amount of guesses as result and adds to a .txt file
+def score_appender(score : int,user_name : str) -> None:
+    '''Function that takes the amount of guesses amd user's name as result and adds to a .txt file
 
     Args:
         score (int): the number of guesses it took the user to answer correctly
+        user_name (str) : user's inputed name
 
     Returns:
         None
@@ -63,16 +64,16 @@ def score_appender(score: int) -> None:
     '''
 
     highscore = open("highscore_guesses.txt", "a")
-    highscore.write(" %s" % str(score))
+    highscore.write(user_name + ":"+  "%s " % str(score))
     highscore.close()
     return None
 
 
-def number_guessing_loop(user_name) -> None:
+def number_guessing_loop(user_name : str) -> None:
     '''Function that asks if the user wants to continue to play. Also passes on user's name
 
     Args:
-        user_name: to pass it on for highscores
+        user_name(str): to pass it on for the number_of_guesses function
 
     Returns:
         None:
@@ -83,7 +84,7 @@ def number_guessing_loop(user_name) -> None:
 
     while want_to_play == "yes":
         number_of_guesses = number_guessing_game()
-        score_appender(number_of_guesses)
+        score_appender(number_of_guesses,user_name)
         want_to_play = yes_or_no("Type yes if you want to play again or no if you want to quit")
         if want_to_play == "no":
             return None
@@ -106,9 +107,6 @@ def highscores():
         file = open("Highscore_Guesses.txt", "r")
         guesses_highscores = file.read()
         guesses_highscores = guesses_highscores.split()
-        for x in range(0, len(guesses_highscores)):
-            guesses_highscores[x] = int(guesses_highscores[x])
-        guesses_highscores.sort()
         print(guesses_highscores)
         file.close()
         return None
