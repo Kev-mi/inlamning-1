@@ -1,6 +1,15 @@
 import random
 
 def yes_or_no(question):
+    '''Function that asks the user to answer yes or no and prints out if the user doesn't enter in yes or no.
+
+        Args:
+            question(str): the question that the user is going to answer yes or no to.
+
+        Returns:
+            user_wish(yes): returns yes or no depending on what the user wants
+
+        '''
     print(question)
     while True:
         user_wish = input()
@@ -60,10 +69,10 @@ def score_appender(score: int) -> None:
 
 
 def number_guessing_loop(user_name) -> None:
-    '''Function that asks if the user wants to continue to play.
+    '''Function that asks if the user wants to continue to play. Also passes on user's name
 
     Args:
-        None:
+        user_name: to pass it on for highscores
 
     Returns:
         None:
@@ -108,7 +117,7 @@ def highscores():
 
 
 user_name = input("What is your name?")
-print("Hello " + user_name)
+print("Hello" + user_name)
 
 number_guessing_loop(user_name)
 
