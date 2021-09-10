@@ -114,13 +114,14 @@ def highscores():
         return None
 
 
-user_name = input("What is your name?")
-print("Hello" + user_name)
+
 def main():
     number_guessing_loop(user_name)
 
 if __name__ == "__main__":
+    user_name = input("What is your name?")
+    print("Hello" + user_name)
     main()
+    highscores()
 
 
-highscores()
